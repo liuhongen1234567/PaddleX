@@ -1,0 +1,38 @@
+{
+  "done_flag": true,
+  "check_pass": true,
+  "attributes": {
+    "train_samples": 10001,
+    "train_sample_paths": [
+      "..\/dataset\/ocr_rec_latexocr_dataset_example\/train\/0077809.png",
+      "..\/dataset\/ocr_rec_latexocr_dataset_example\/train\/0161600.png",
+      "..\/dataset\/ocr_rec_latexocr_dataset_example\/train\/0002077.png",
+      "..\/dataset\/ocr_rec_latexocr_dataset_example\/train\/0178425.png",
+      "..\/dataset\/ocr_rec_latexocr_dataset_example\/train\/0010959.png",
+      "..\/dataset\/ocr_rec_latexocr_dataset_example\/train\/0079266.png",
+      "..\/dataset\/ocr_rec_latexocr_dataset_example\/train\/0142495.png",
+      "..\/dataset\/ocr_rec_latexocr_dataset_example\/train\/0196376.png",
+      "..\/dataset\/ocr_rec_latexocr_dataset_example\/train\/0185513.png",
+      "..\/dataset\/ocr_rec_latexocr_dataset_example\/train\/0217146.png"
+    ],
+    "val_samples": 501,
+    "val_sample_paths": [
+      "..\/dataset\/ocr_rec_latexocr_dataset_example\/val\/0053264.png",
+      "..\/dataset\/ocr_rec_latexocr_dataset_example\/val\/0100521.png",
+      "..\/dataset\/ocr_rec_latexocr_dataset_example\/val\/0146333.png",
+      "..\/dataset\/ocr_rec_latexocr_dataset_example\/val\/0072788.png",
+      "..\/dataset\/ocr_rec_latexocr_dataset_example\/val\/0002022.png",
+      "..\/dataset\/ocr_rec_latexocr_dataset_example\/val\/0203664.png",
+      "..\/dataset\/ocr_rec_latexocr_dataset_example\/val\/0082217.png",
+      "..\/dataset\/ocr_rec_latexocr_dataset_example\/val\/0208199.png",
+      "..\/dataset\/ocr_rec_latexocr_dataset_example\/val\/0111236.png",
+      "..\/dataset\/ocr_rec_latexocr_dataset_example\/val\/0204453.png"
+    ]
+  },
+  "analysis": {
+    "histogram": "check_dataset\/histogram.png"
+  },
+  "dataset_path": ".\/dataset\/ocr_rec_latexocr_dataset_example",
+  "show_type": "image",
+  "dataset_type": "LaTeXOCRDataset"
+}
