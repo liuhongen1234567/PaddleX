@@ -12,6 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from .utils.lazy_loader import LazyLoader
+import sys
+
+paddle = LazyLoader("lazy_paddle", globals(), "paddle")
+sys.modules["lazy_paddle"] = paddle
+
 import os
 
 from . import version
@@ -19,10 +25,10 @@ from .modules import (
     build_dataset_checker,
     build_trainer,
     build_evaluater,
-    build_predictor,
 )
-from .modules import create_model, PaddleInferenceOption
-from .pipelines import *
+
+
+from .inference import create_model, create_pipeline
 
 
 def _initialize():
@@ -44,7 +50,6 @@ def _initialize():
 
 def _check_paddle_version():
     """check paddle version"""
-    import paddle
 
     supported_versions = ["3.0", "0.0"]
     device_type = paddle.device.get_device().split(":")[0]

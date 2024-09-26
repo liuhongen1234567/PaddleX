@@ -12,10 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from .base import BaseResult
 from .topk import TopkResult
 from .text_det import TextDetResult
 from .text_rec import TextRecResult
-from .table_rec import TableRecResult
+from .table_rec import TableRecResult, StructureTableResult, TableResult
 from .ocr import OCRResult
-from .det import DetResults
-from .instance_seg import InstanceSegResults
+from .det import DetResult
+from .seg import SegResult
+from .instance_seg import InstanceSegResult
+from .ts import TSFcResult, TSAdResult, TSClsResult
+from .warp import DocTrResult

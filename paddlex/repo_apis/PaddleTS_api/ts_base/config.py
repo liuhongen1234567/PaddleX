@@ -16,10 +16,9 @@ import os
 from urllib.parse import urlparse
 
 import ruamel.yaml
-from paddlets.utils.config import parse_from_yaml, merge_config_dicts
 
 from ...base import BaseConfig
-from ....utils.misc import abspath
+from ....utils.misc import abspath, convert_and_remove_types
 
 
 class BaseTSConfig(BaseConfig):
@@ -31,6 +30,8 @@ class BaseTSConfig(BaseConfig):
         Args:
             dict_like_obj (dict): dict of pairs(key0.key1.idx.key2=value).
         """
+        from paddlets.utils.config import merge_config_dicts
+
         dict_ = merge_config_dicts(dict_like_obj, self.dict)
         self.reset_from_dict(dict_)
 
@@ -43,6 +44,8 @@ class BaseTSConfig(BaseConfig):
         Raises:
             TypeError: the content of yaml file `config_file_path` error.
         """
+        from paddlets.utils.config import parse_from_yaml
+
         dict_ = parse_from_yaml(config_file_path)
         if not isinstance(dict_, dict):
             raise TypeError
@@ -56,7 +59,9 @@ class BaseTSConfig(BaseConfig):
         """
         yaml = ruamel.yaml.YAML()
         with open(config_file_path, "w", encoding="utf-8") as f:
-            yaml.dump(self.dict, f)
+            dict_to_dump = self.dict
+            dict_to_dump = convert_and_remove_types(dict_to_dump)
+            yaml.dump(dict_to_dump, f)
 
     def update_epochs(self, epochs: int):
         """update epochs setting
